@@ -1,0 +1,10 @@
+{
+"namespace":"com.syncfusion.utils",
+"type": "record",
+"name":"PressureReading",
+"fields":[
+{"name": "name", "type":"string"},
+{"name": "value", "type":"double"},
+{"name": "date", "type":"long"}
+]
+}
