@@ -3,12 +3,14 @@ h1. System requirements
 These are the versions of dependencies that the sample applications were tested against.
  
 * Oracle ==JDK 1.7== (64 bit version).
-* NetBeans 7.4.
-* Apache Maven – version that is included with Netbeans 7.4.
 * Apache Storm 0.9.
 * Apache Zookeeper (required by Storm).
 * Apache Pig 0.12.
 * Redis 2.8.4.
+
+h1. Build environment
+* NetBeans 7.4.
+* Apache Maven – version that is included with Netbeans 7.4.
 
 h1. Steps required to run sample
 
