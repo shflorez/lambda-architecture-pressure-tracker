@@ -38,7 +38,6 @@ h2. Optional steps
 
 If you choose to run the Pig script you can run in local mode as below.
 
-bc..
 pig -x local calculate-max.pig
 
 
@@ -47,7 +46,6 @@ h2. Required steps
 * Build the *utils* project. The *realtime* and *query* projects depend on *utils*. *utils* can be built with Maven or an ==IDE== such as Netbeans or Eclipse.
 * The Storm project available under the *realtime* folder. *realtime* can be built with Maven or an ==IDE== such as Netbeans or Eclipse. Once built you can deploy the resulting jar file on your local Storm development cluster using the command below. Please note that minor code changes may be needed to deploy to an actual non-development Storm cluster. We tested with a local development cluster.
 
-bc..
 storm jar realtime-1.0-SNAPSHOT-jar-with-dependencies.jar com.syncfusion.realtime.MaxTrackerTop
 
 * Once the storm job is completed (it shuts down automatically), or even when it is running you can build and run the *query* sample. The *query* sample writes top ten pressure values form the realtime and batch views to the console. *query* can be built with Maven or an ==IDE== such as Netbeans or Eclipse.
