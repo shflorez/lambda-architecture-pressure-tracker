@@ -9,6 +9,7 @@ These are the versions of dependencies that the sample applications were tested 
 * Redis 2.8.4.
 
 h1. Build environment
+
 * NetBeans 7.4.
 * Apache Maven – version that is included with Netbeans 7.4.
 
