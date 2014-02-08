@@ -17,13 +17,13 @@ h2. Dependency configuration
 * Ensure that dependencies are properly configured and running. 
 ** Apache Zookeeper needs to be running
 *** Navigate to *zookeeper$version/bin*.
-*** Start ZooKeeper with <pre>./zkServer.sh start</pre> 
-*** On Windows use <pre>zkServer.cmd start</pre>.
+*** Start ZooKeeper with <pre>./zkServer.sh start``` 
+*** On Windows use <pre>zkServer.cmd start```.
 ** Storm needs to be running.
 *** Navigate to *storm-$version/bin*.
 *** Run the following commands to start Storm.
-**** <pre>./storm nimbus &</pre>
-**** <pre>./storm supervisor &</pre>
+**** ```./storm nimbus &```
+**** ```./storm supervisor &```
 *** To configure Storm on Windows please refer this "blog":http://ptgoetz.github.io/blog/2013/12/18/running-apache-storm-on-windows post. 
 *** On Windows use the short version of paths that contain spaces (for instance, c:\program files\... should be shortened) when configuring ==JAVA_HOME==. We had trouble with paths that contain spaces when running Storm.
 ** Redis needs to be running.
@@ -38,17 +38,17 @@ h2. Optional steps
 
 If you choose to run the Pig script you can run in local mode as below.
 
-<pre>
+```
 pig -x local calculate-max.pig
-</pre>
+```
 
 h2. Required steps
 
 * Build the *utils* project. The *realtime* and *query* projects depend on *utils*. *utils* can be built with Maven or an ==IDE== such as Netbeans or Eclipse.
 * The Storm project available under the *realtime* folder. *realtime* can be built with Maven or an ==IDE== such as Netbeans or Eclipse. Once built you can deploy the resulting jar file on your local Storm development cluster using the command below. Please note that minor code changes may be needed to deploy to an actual non-development Storm cluster. We tested with a local development cluster.
 
-<pre>
+```
 storm jar realtime-1.0-SNAPSHOT-jar-with-dependencies.jar com.syncfusion.realtime.MaxTrackerTop
-</pre>
+```
 
 * Once the storm job is completed (it shuts down automatically), or even when it is running you can build and run the *query* sample. The *query* sample writes top ten pressure values form the realtime and batch views to the console. *query* can be built with Maven or an ==IDE== such as Netbeans or Eclipse.
