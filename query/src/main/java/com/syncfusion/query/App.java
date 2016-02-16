@@ -15,7 +15,7 @@ import java.util.List;
 import redis.clients.jedis.Jedis;
 
 public class App {
-    private static final String BATCH_RESULTS_FILENAME = "../batch/part-r-00000";
+    private static final String BATCH_RESULTS_FILENAME = "../batch/output/part-r-00000";
 
     public static void main(String[] args) throws IOException {
         ArrayList<PressureReading> values = new ArrayList<PressureReading>();
@@ -31,7 +31,7 @@ public class App {
         SimpleDateFormat ft = new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
 
         for (PressureReading reading : finalValues) {
-            String text = String.format("Sensor - %s, Pressure - %f%n, Date - %s", 
+            String text = String.format("Sensor - %s, Pressure - %f, Date - %s", 
                     reading.getName(), 
                     reading.getValue(), 
                     ft.format(reading.getDate()));
@@ -42,7 +42,7 @@ public class App {
 
     private static void sortResults(ArrayList<PressureReading> values) {
         Collections.sort(values, new Comparator<PressureReading>() {
-            @Override
+            //TODO - eliminado @Override
             public int compare(PressureReading reading1, PressureReading reading2) {
                 return reading2.getValue().compareTo(reading1.getValue());
             }
@@ -58,6 +58,8 @@ public class App {
         for (String s : stored) {
             PressureReading pressureReading = PressureReadingHelpers.deserializeFromString(s);
             values.add(pressureReading);
+            
+            System.out.println("RealTime :: " + pressureReading);
         }
     }
 
@@ -69,6 +71,8 @@ public class App {
         for (String line : lines) {
             PressureReading pressureReading = PressureReadingHelpers.fromCSV(line);
             values.add(pressureReading);
+            
+            System.out.println("Batch :: " + pressureReading);
         }
     }
 }

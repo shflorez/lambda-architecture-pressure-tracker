@@ -20,13 +20,17 @@ import redis.clients.jedis.Jedis;
 
 public class MaxTrackerBolt extends BaseRichBolt {
 
-    OutputCollector _collector;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	OutputCollector _collector;
     PriorityQueue<PressureReading> queue;
 
     public MaxTrackerBolt() {
     }
 
-    @Override
+    // TODO - Override
     public void prepare(Map conf, TopologyContext context, OutputCollector collector) {
         _collector = collector;
         this.queue = new PriorityQueue<PressureReading>(Configuration.MAXVALUES,
@@ -38,7 +42,7 @@ public class MaxTrackerBolt extends BaseRichBolt {
         );
     }
 
-    @Override
+    // TODO -  Override
     public void execute(Tuple tuple) {
 
         if (isTickTuple(tuple)) {
@@ -78,7 +82,7 @@ public class MaxTrackerBolt extends BaseRichBolt {
         return tuple.getSourceStreamId().equals("__tick");
     }
 
-    @Override
+    // TODO Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
         // no further output
     }

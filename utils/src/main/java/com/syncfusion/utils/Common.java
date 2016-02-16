@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class Common {
 
-    private static final double UPPER_RANGE = 200;
-    private static final double LOWER_RANGE = 150;
+    public static final double UPPER_RANGE = 800;
+    public static final double LOWER_RANGE = 750;
     private static final Random random = new Random();
 
     public static double getRandomDouble() {
